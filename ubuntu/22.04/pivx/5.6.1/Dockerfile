@@ -1,5 +1,5 @@
 # Dockerfile References: https://docs.docker.com/engine/reference/builder/
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Add Maintainer Info
 LABEL maintainer="NekoSuneVR <nekosunevr@gmail.com>"
