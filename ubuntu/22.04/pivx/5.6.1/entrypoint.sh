@@ -9,4 +9,5 @@ cd /opt/coins/blockbook/pivx/
     -internal=0.0.0.0:9049 \
     -public=0.0.0.0:9149 \
     -certfile=/opt/coins/blockbook/pivx/cert/blockbook \
-    -explorer= -log_dir=/opt/coins/blockbook/pivx/logs
+    -explorer= -log_dir=/opt/coins/blockbook/pivx/logs \
+    -workers=1
