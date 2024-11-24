@@ -9,4 +9,5 @@ cd /opt/coins/blockbook/dogec/
     -internal=0.0.0.0:9025 \
     -public=0.0.0.0:9125 \
     -certfile=/opt/coins/blockbook/dogec/cert/blockbook \
-    -explorer= -log_dir=/opt/coins/blockbook/dogec/logs
+    -explorer= -log_dir=/opt/coins/blockbook/dogec/logs \
+    -workers=1
