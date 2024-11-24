@@ -1,0 +1,58 @@
+version: "3.7"
+services:
+  znzblockbook:
+    container_name: znz_blockbook
+    restart: unless-stopped
+    build: ./ubuntu/22.04/znz/2.1.0/
+    logging:
+      options:
+        max-file: "5"
+        max-size: 10m
+    ports:
+      - 9013:9013
+      - 9113:9113
+    volumes:
+      - ./blocks/znz:/opt/coins/data/znz/blockbook/db/
+    networks:
+      infura:
+        ipv4_address: 10.2.0.100
+  dogecblockbook:
+    container_name: dogec_blockbook
+    restart: unless-stopped
+    build: ./ubuntu/22.04/dogec/5.5.1/
+    logging:
+      options:
+        max-file: "5"
+        max-size: 10m
+    ports:
+      - 9025:9025
+      - 9125:9125
+    volumes:
+      - ./blocks/dogec:/opt/coins/data/dogec/blockbook/db/
+    networks:
+      infura:
+        ipv4_address: 10.2.0.101
+  pivxcblockbook:
+    container_name: pivx_blockbook
+    restart: unless-stopped
+    build: ./ubuntu/22.04/pivx/5.6.1/
+    logging:
+      options:
+        max-file: "5"
+        max-size: 10m
+    ports:
+      - 9049:9049
+      - 9149:9149
+    volumes:
+      - ./blocks/pivx:/opt/coins/data/pivx/blockbook/db/
+    networks:
+      infura:
+        ipv4_address: 10.2.0.102
+networks:
+  infura:
+    name: infura
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.2.0.0/24
